@@ -23,7 +23,7 @@ let userList = [
 // REGISTRATION
 router.post("/registration", (req,res) => {
   let user = {
-      id: userList.length + 1,
+      id: userList.length + 1, 
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       username: req.body.username,
@@ -39,7 +39,7 @@ router.post("/registration", (req,res) => {
       list.password === user.password);
 
       if (isUserExist) {
-          console.log("Already have an account!");
+          console.log("Already have account!");
       } else {
           userList.push(user);
       }
