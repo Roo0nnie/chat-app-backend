@@ -43,12 +43,12 @@ router.post("/registration", (req,res) => {
       } else {
           userList.push(user);
       }
-      res.send(user);
+      res.status(200).send(user);
 });
 
 //  LOGIN
 router.post("/login", (req,res) => {
-  let user = userList.find((item) => item.email === req.body.email && item.password === req.body.password);
+  let user = userList.find((item) => item.username === req.body.username && item.password === req.body.password);
   res.status(200).send(user ?? {errMsg: "Invalid Login: User not found!"});
 })
 
