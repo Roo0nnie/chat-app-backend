@@ -31,12 +31,9 @@ router.post("/registration", (req,res) => {
       password: req.body.password,
   };
 
-  const isUserExist = user.find((list) => 
-      list.firstName === user.firstName &&
-      list.lastName === user.lastName &&
-      list.username === user.username &&
-      list.email === user.email &&
-      list.password === user.password);
+  const isUserExist = userList.find((list) => 
+      list.username === user.username ||
+      list.email === user.email);
 
       if (isUserExist) {
           console.log("Already have account!");
